@@ -53,5 +53,5 @@ function getLocationAndWeather(){
 
 
 
-//flickr code goes below
+// //flickr code goes below
     
