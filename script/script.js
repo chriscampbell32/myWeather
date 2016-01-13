@@ -37,4 +37,8 @@ function getLocationAndWeather(){
     alert("Unable to fetch the location and weather data.");
   }     
 }
+
+
+
+//flickr code goes below
     
