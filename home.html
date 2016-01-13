@@ -6,10 +6,15 @@
 </head>
 <body>
 <section>
-    <h1>Weather Web App</h1>
-    <p>by Chris Campbell</p>
+    <h1 id="city">Weather Web App</h1>
+    <!--add onclick event to change between celsius and fahrenheit-->
+    <p><a id="temperature" href="#" onclick="switchUnits();
+    return false;" title="click to switch between metric and imperial units"></a><span id="weather">by Chris Campbell</span></p>
 </section>
 
+<footer>
+    <p>powered by <a href="http://flickr.com/services/api/">Flickr</a> and <a href="http://openweathermap.org">Openweathermap.org</a>. Created by Chris Campbell <a id="image-source" href="#">Image source</a>.</p>
+</footer>
 
 </body>
 </html>
