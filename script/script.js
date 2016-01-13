@@ -51,6 +51,14 @@ function getLocationAndWeather(){
       alert("Could not complete the request");
     }, false);
 
+       xhr.open("GET", "https://fourtonfish.com/tutorials/weather-web-app/getlocationandweather.php?owapikey=824a583b9e96f79b106e6ed7f7b0f433&units=metric", true);
+    xhr.send();
+  }
+  else{
+    alert("Unable to fetch the location and weather data.");
+  }           
+}
+
 
 
 // //flickr code goes below
