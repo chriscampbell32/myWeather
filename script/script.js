@@ -23,20 +23,33 @@ function switchUnits(){
 
 //xmlhttp requests
 function getLocationAndWeather(){
-    if(window.XMLHttpRequest){
-        var xhr = new XMLHttpRequest();
+  if (window.XMLHttpRequest){
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", function() {
+      var response = JSON.parse(xhr.responseText);
 
-        xhr.addEventListener("load", function() {}, false);
-    xhr.addEventListener("error", function(){}, false);
-    
-    xhr.open("GET", "<URL>", true);
-    xhr.send();
-  }
-  //handle errors
-  else{
-    alert("Unable to fetch the location and weather data.");
-  }     
-}
+      console.log(response);
+      var position = {
+        latitude: response.latitude,
+        longitude: response.longitude
+      };
+      var cityName = response.city;
+
+      var weatherSimpleDescription = response.weather.simple;
+      var weatherDescription = response.weather.description;
+      var weatherTemperature = roundTemperature(response.weather.temperature);
+
+      weatherData.temperatureValue = weatherTemperature;
+
+      loadBackground(position.latitude, position.longitude, weatherSimpleDescription);
+      weatherData.city.innerHTML = cityName;
+      weatherData.weather.innerHTML =  ", " + weatherDescription;
+      weatherData.temperature.innerHTML = weatherTemperature + weatherData.units;
+    }, false);
+
+    xhr.addEventListener("error", function(err){
+      alert("Could not complete the request");
+    }, false);
 
 
 
