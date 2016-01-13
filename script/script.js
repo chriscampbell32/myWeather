@@ -6,6 +6,8 @@ var weatherData = {
     units: "C"
 };
 
+
+//function changes celsius to fahrenheit
 function switchUnits(){
   if (weatherData.units == "C"){
     weatherData.temperatureValue = roundTemperature(weatherData.temperatureValue * 9/5 + 32);
@@ -19,6 +21,7 @@ function switchUnits(){
   weatherData.temperature.innerHTML = weatherData.temperatureValue + weatherData.units + ", ";      
 }
 
+//xmlhttp requests
 function getLocationAndWeather(){
     if(window.XMLHttpRequest){
         var xhr = new XMLHttpRequest();
@@ -29,6 +32,7 @@ function getLocationAndWeather(){
     xhr.open("GET", "<URL>", true);
     xhr.send();
   }
+  //handle errors
   else{
     alert("Unable to fetch the location and weather data.");
   }     
