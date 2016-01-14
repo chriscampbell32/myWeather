@@ -10,11 +10,11 @@ var weatherData = {
 //function changes celsius to fahrenheit
 function switchUnits(){
   if (weatherData.units == "C"){
-    weatherData.temperatureValue = roundTemperature(weatherData.temperatureValue * 9/5 + 32);
+    weatherData.temperatureValue = Math.round(weatherData.temperatureValue * 9/5 + 32);
     weatherData.units = "F";
   }
   else{
-    weatherData.temperatureValue = roundTemperature((weatherData.temperatureValue -  32) * 5/9);
+    weatherData.temperatureValue = Math.round(weatherData.temperatureValue -  32 * 5/9);
     weatherData.units = "C";
   }
 
@@ -37,7 +37,7 @@ function getLocationAndWeather(){
 
       var weatherSimpleDescription = response.weather.simple;
       var weatherDescription = response.weather.description;
-      var weatherTemperature = roundTemperature(response.weather.temperature);
+      var weatherTemperature = Math.round(response.weather.temperature);
 
       weatherData.temperatureValue = weatherTemperature;
 
