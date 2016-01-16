@@ -62,4 +62,10 @@ function getLocationAndWeather(){
 
 
 // //flickr code goes below
-    
+  function loadBackground(lat, lon, weatherTag) {
+  var script_element = document.createElement('script');
+
+  script_element.src = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=82b02e63d4ac3aeb321e02eaa8b52369&lat=" + lat + "&lon=" + lon + "&accuracy=1&tags=" + weatherTag + "&sort=relevance&extras=url_l&format=json";
+
+  document.getElementsByTagName('head')[0].appendChild(script_element);
+}  
