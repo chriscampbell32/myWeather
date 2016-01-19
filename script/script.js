@@ -70,7 +70,7 @@ function getLocationAndWeather(){
   document.getElementsByTagName('head')[0].appendChild(script_element);
 }
 
-
+function jsonFlickrApi(data){}
 
 
 
