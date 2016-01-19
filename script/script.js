@@ -70,7 +70,16 @@ function getLocationAndWeather(){
   document.getElementsByTagName('head')[0].appendChild(script_element);
 }
 
-function jsonFlickrApi(data){}
+function jsonFlickrApi(data){
+  if (data.photos.pages > 0) {
+    var photo = data.photos.photo[0];
+
+    //document.queryselector in body
+  }
+  else{
+    //put stock photo in instead
+  }
+}
 
 
 
